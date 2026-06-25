@@ -2,15 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Quote Generator</title>
+  <title>Learning Hub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>✨ Random Quote Generator ✨</h1>
-    <p id="quote">Click the button to see a quote!</p>
-    <button onclick="newQuote()">Get Quote</button>
+    <h1>✨ Learning Hub ✨</h1>
+    <p id="quote">Choose a topic to get started!</p>
+    <button onclick="showQuote('love')">Learn about Love</button>
+    <button onclick="showQuote('life')">Learn about Life</button>
+    <button onclick="showQuote('programming')">Learn about Programming</button>
+    <button onclick="showQuote('python')">Learn about Python</button>
+
+    <h2>Chat with me</h2>
+    <input type="text" id="userInput" placeholder="Ask me something...">
+    <button onclick="chatBot()">Ask</button>
+    <p id="chatReply"></p>
   </div>
   <script src="script.js"></script>
 </body>

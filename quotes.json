@@ -1,0 +1,19 @@
+{
+  "love": [
+    "Love is composed of a single soul inhabiting two bodies.",
+    "The best thing to hold onto in life is each other."
+    // keep adding until you reach 1000
+  ],
+  "life": [
+    "Life is what happens when you're busy making other plans.",
+    "In the middle of every difficulty lies opportunity."
+  ],
+  "programming": [
+    "Programs must be written for people to read, and only incidentally for machines to execute.",
+    "Talk is cheap. Show me the code."
+  ],
+  "python": [
+    "Python is executable pseudocode.",
+    "Simple is better than complex."
+  ]
+}

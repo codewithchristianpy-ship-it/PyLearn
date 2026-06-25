@@ -1,23 +1,13 @@
-from flask import Flask, render_template, request
+import json
 
-app = Flask(__name__)
+quotes = [
+    "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "Hardships often prepare ordinary people for an extraordinary destiny.",
+    "Believe you can and you're halfway there.",
+    "Don’t watch the clock; do what it does. Keep going."
+]
 
-# 1. This route displays your frontend webpage
-@app.route('/')
-def home():
-    return render_template('index.html')
+with open("quotes.json", "w") as f:
+    json.dump(quotes, f)
 
-# 2. This route receives data from the browser, processes it, and returns a result
-@app.route('/greet', methods=['POST'])
-def greet_user():
-    # Grab the name input from the HTML form safely
-    username = request.form.get('user_name')
-    
-    # Process it with Python string manipulation
-    processed_name = username.upper()
-    
-    # Send the result back to the screen
-    return f"<h1>Hello, {processed_name}! Welcome to your Python app!</h1>"
-
-if __name__ == '__main__':
-    app.run(debug=True)
+print("quotes.json file created!")

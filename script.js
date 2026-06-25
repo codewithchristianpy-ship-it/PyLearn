@@ -1,11 +1,30 @@
-let quotes = [
-  "The best way to get started is to quit talking and begin doing.",
-  "Don’t let yesterday take up too much of today.",
-  "It’s not whether you get knocked down, it’s whether you get up.",
-  "If you are working on something exciting, it will keep you motivated."
-];
+let quotes = {};
 
-function newQuote() {
-  let randomIndex = Math.floor(Math.random() * quotes.length);
-  document.getElementById("quote").innerText = quotes[randomIndex];
+fetch("quotes.json")
+  .then(response => response.json())
+  .then(data => quotes = data);
+
+function showQuote(category) {
+  let categoryQuotes = quotes[category];
+  let randomIndex = Math.floor(Math.random() * categoryQuotes.length);
+  document.getElementById("quote").innerText = categoryQuotes[randomIndex];
+}
+
+function chatBot() {
+  let userInput = document.getElementById("userInput").value.toLowerCase();
+  let reply = "";
+
+  if (userInput.includes("love")) {
+    reply = "Love is patient and kind.";
+  } else if (userInput.includes("life")) {
+    reply = "Life is a journey, not a destination.";
+  } else if (userInput.includes("python")) {
+    reply = "Python is great for beginners!";
+  } else if (userInput.includes("programming")) {
+    reply = "Programming teaches you how to think logically.";
+  } else {
+    reply = "Ask me about love, life, programming, or Python!";
+  }
+
+  document.getElementById("chatReply").innerText = reply;
 }
